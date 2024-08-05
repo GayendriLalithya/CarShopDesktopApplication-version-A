@@ -14,6 +14,11 @@ namespace ABCCarTraders.Healper
         // Retrieves the connection string from the configuration file
         private static readonly string connectionString = ConfigurationManager.ConnectionStrings["CarDealershipDB"].ConnectionString;
 
+        public static string ConnectionString
+        {
+            get { return connectionString; }
+        }
+
         // Executes a non-query SQL command (INSERT, UPDATE, DELETE)
         public static void ExecuteNonQuery(string sql, SqlParameter[] parameters)
         {

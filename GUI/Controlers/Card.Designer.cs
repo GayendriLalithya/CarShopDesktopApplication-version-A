@@ -33,9 +33,9 @@
             this.lblModel = new System.Windows.Forms.Label();
             this.lblPrice = new System.Windows.Forms.Label();
             this.lblYear = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnViewMore = new System.Windows.Forms.Button();
+            this.btnAddToCart = new System.Windows.Forms.Button();
+            this.btnPlaceOrder = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picCarImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,40 +83,40 @@
             this.lblYear.TabIndex = 4;
             this.lblYear.Text = "Year";
             // 
-            // button2
+            // btnViewMore
             // 
-            this.button2.Location = new System.Drawing.Point(141, 289);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(133, 32);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "View More";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnViewMore.Location = new System.Drawing.Point(141, 289);
+            this.btnViewMore.Name = "btnViewMore";
+            this.btnViewMore.Size = new System.Drawing.Size(133, 32);
+            this.btnViewMore.TabIndex = 6;
+            this.btnViewMore.Text = "View More";
+            this.btnViewMore.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnAddToCart
             // 
-            this.button1.Location = new System.Drawing.Point(4, 289);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(133, 32);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Add to Cart";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAddToCart.Location = new System.Drawing.Point(4, 289);
+            this.btnAddToCart.Name = "btnAddToCart";
+            this.btnAddToCart.Size = new System.Drawing.Size(133, 32);
+            this.btnAddToCart.TabIndex = 7;
+            this.btnAddToCart.Text = "Add to Cart";
+            this.btnAddToCart.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnPlaceOrder
             // 
-            this.button3.Location = new System.Drawing.Point(4, 327);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(270, 32);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Place Order";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnPlaceOrder.Location = new System.Drawing.Point(4, 327);
+            this.btnPlaceOrder.Name = "btnPlaceOrder";
+            this.btnPlaceOrder.Size = new System.Drawing.Size(270, 32);
+            this.btnPlaceOrder.TabIndex = 8;
+            this.btnPlaceOrder.Text = "Place Order";
+            this.btnPlaceOrder.UseVisualStyleBackColor = true;
             // 
             // Card
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnPlaceOrder);
+            this.Controls.Add(this.btnAddToCart);
+            this.Controls.Add(this.btnViewMore);
             this.Controls.Add(this.lblYear);
             this.Controls.Add(this.lblPrice);
             this.Controls.Add(this.lblModel);
@@ -124,6 +124,7 @@
             this.Controls.Add(this.picCarImage);
             this.Name = "Card";
             this.Size = new System.Drawing.Size(277, 364);
+            this.Load += new System.EventHandler(this.Card_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picCarImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -137,8 +138,8 @@
         private System.Windows.Forms.Label lblModel;
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.Label lblYear;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnViewMore;
+        private System.Windows.Forms.Button btnAddToCart;
+        private System.Windows.Forms.Button btnPlaceOrder;
     }
 }

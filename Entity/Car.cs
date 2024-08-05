@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms.VisualStyles;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
+using System.Configuration;
 
 namespace ABCCarTraders.Entity
 {
@@ -14,8 +15,9 @@ namespace ABCCarTraders.Entity
     {
         // Attributes of the Car Class
         public int carid {  get; set; }
-        public int itemid { get; set; }
+        public int? itemid { get; set; }
         public int brandid { get; set; }
+        public string brand { get; set; }
         public string model { get; set; }
         public int year { get; set; }
         public decimal price { get; set; }
@@ -28,11 +30,12 @@ namespace ABCCarTraders.Entity
         }
 
         // Parameterised Construtor
-        public Car(int itemid, int carid, int barndid, string model, int year, decimal price, string image) 
+        public Car(int itemid, int carid, int barndid, string brand, string model, int year, decimal price, string image) 
         {
             this.carid = carid;
             this.itemid = itemid;  
             this.brandid = brandid;
+            this.brand = brand;
             this.model = model;
             this.year = year;
             this.price = price;
@@ -139,6 +142,40 @@ namespace ABCCarTraders.Entity
                 }
             }
             return null;
+        }
+
+        public static List<Car> GetAllCars()
+        {
+            List<Car> cars = new List<Car>();
+            string connectionString = ConfigurationManager.ConnectionStrings["CarDealershipDB"].ConnectionString;
+            string query = @"
+                           SELECT c.car_id, c.item_id, c.brand_id, b.brand_name, c.model, c.year, c.price, c.image 
+                           FROM Car AS c 
+                           JOIN Brand AS b ON c.brand_id = b.brand_id";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Car car = new Car
+                    {
+                        carid = reader.GetInt32(0),
+                        itemid = reader.GetInt32(1),
+                        brandid = reader.GetInt32(2),
+                        brand = reader.GetString(3),
+                        model = reader.GetString(4),
+                        year = reader.GetInt32(5),
+                        price = reader.GetDecimal(6),
+                        image = reader.IsDBNull(7) ? null : reader.GetString(7)
+                    };
+                    cars.Add(car);
+                }
+                reader.Close();
+            }
+            return cars;
         }
     }
 }

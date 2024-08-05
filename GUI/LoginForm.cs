@@ -48,7 +48,7 @@ namespace ABCCarTraders
             this.Show();  // Optionally, show the login form again if the registration form is closed
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void btnLogin_Click_1(object sender, EventArgs e)
         {
             string email = tbUname.Text.Trim();
             string password = tbPsw.Text;
@@ -84,7 +84,7 @@ namespace ABCCarTraders
             }
         }
 
-        private void tbUname_TextChanged(object sender, EventArgs e)
+        private void lnkRegister_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
 
         }

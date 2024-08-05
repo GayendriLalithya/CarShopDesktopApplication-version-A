@@ -57,16 +57,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controlers\Card.cs">
+    <Compile Include="GUI\Controlers\CarCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controlers\Card.Designer.cs">
+    <Compile Include="GUI\Controlers\CarCard.Designer.cs">
+      <DependentUpon>CarCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controlers\Card.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Controlers\Card.Designer.cs">
       <DependentUpon>Card.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controlers\CartItem.cs">
+    <Compile Include="GUI\Controlers\CarPartCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controlers\CartItem.Designer.cs">
+    <Compile Include="GUI\Controlers\CarPartCard.Designer.cs">
+      <DependentUpon>CarPartCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Controlers\CartItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Controlers\CartItem.Designer.cs">
       <DependentUpon>CartItem.cs</DependentUpon>
     </Compile>
     <Compile Include="Database\Connection.cs" />
@@ -169,6 +181,12 @@
     <Compile Include="GUI\Customer\MyOrders.Designer.cs">
       <DependentUpon>MyOrders.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\HomePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\HomePage.Designer.cs">
+      <DependentUpon>HomePage.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Registration.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,18 +202,24 @@
     <Compile Include="Healper\DatabaseHelper.cs" />
     <Compile Include="Healper\PasswordHelper.cs" />
     <Compile Include="Healper\ValidationHelper.cs" />
-    <Compile Include="LoginForm.cs">
+    <Compile Include="GUI\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm.Designer.cs">
+    <Compile Include="GUI\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Controlers\Card.resx">
+    <EmbeddedResource Include="GUI\Controlers\CarCard.resx">
+      <DependentUpon>CarCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Controlers\Card.resx">
       <DependentUpon>Card.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controlers\CartItem.resx">
+    <EmbeddedResource Include="GUI\Controlers\CarPartCard.resx">
+      <DependentUpon>CarPartCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Controlers\CartItem.resx">
       <DependentUpon>CartItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Admin\AdminDashboard.resx">
@@ -216,10 +240,13 @@
     <EmbeddedResource Include="GUI\Customer\CustomerDashboard.resx">
       <DependentUpon>CustomerDashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\HomePage.resx">
+      <DependentUpon>HomePage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserProfile.resx">
       <DependentUpon>UserProfile.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginForm.resx">
+    <EmbeddedResource Include="GUI\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Registration.resx">

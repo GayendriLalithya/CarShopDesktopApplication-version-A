@@ -11,7 +11,7 @@ namespace ABCCarTraders.Entity
     public class Brand
     {
         // Attributes of the Brand class
-        public int brandid { get; set; }
+        public int? brandid { get; set; }
         public string brandname { get; set; }
         public string image {  get; set; }
 

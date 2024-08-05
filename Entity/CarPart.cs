@@ -1,6 +1,7 @@
 ﻿using ABCCarTraders.Healper;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,7 @@ namespace ABCCarTraders.Entity
         public int itemid { get; set; }
         public string carpartname { get; set; }
         public int brandid { get; set; }
+        public string brandname { get; set; }
         public string partnumber { get; set; }
         public decimal partprice { get; set; }
         public string image {  get; set; }
@@ -26,12 +28,13 @@ namespace ABCCarTraders.Entity
         }
 
         // Parameterized Con
-        public CarPart(int itemid, int carpartid, string carpartname, int brandid, string partnumber, decimal partprice, string image)
+        public CarPart(int itemid, int carpartid, string carpartname, int brandid, string brandname, string partnumber, decimal partprice, string image)
         {
             this.carpartid = carpartid;
             this.itemid = itemid;
             this.carpartname = carpartname;
             this.brandid = brandid;
+            this.brandname = brandname;
             this.partnumber = partnumber;
             this.partprice = partprice;
             this.image = image;
@@ -138,6 +141,40 @@ namespace ABCCarTraders.Entity
                 }
             }
             return null;
+        }
+
+        public static List<CarPart> GetAllCarParts()
+        {
+            List<CarPart> carparts = new List<CarPart>();
+            string connectionString = ConfigurationManager.ConnectionStrings["CarDealershipDB"].ConnectionString;
+            string query = @"
+                           SELECT cp.car_part_id, cp.item_id, cp.car_part_name, cp.brand_id, b.brand_name, cp.part_number, cp.part_price, cp.image 
+                           FROM CarPart AS cp 
+                           JOIN Brand AS b ON cp.brand_id = b.brand_id";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    CarPart carpart = new CarPart
+                    {
+                        carpartid = reader.GetInt32(0),
+                        itemid = reader.GetInt32(1),
+                        carpartname = reader.GetString(2),
+                        brandid = reader.GetInt32(3),
+                        brandname = reader.GetString(4),
+                        partnumber = reader.GetString(5),
+                        partprice = reader.GetDecimal(6),
+                        image = reader.IsDBNull(7) ? null : reader.GetString(7)
+                    };
+                    carparts.Add(carpart);
+                }
+                reader.Close();
+            }
+            return carparts;
         }
     }
 }

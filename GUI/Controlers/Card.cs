@@ -16,5 +16,10 @@ namespace ABCCarTraders.Controlers
         {
             InitializeComponent();
         }
+
+        private void Card_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
