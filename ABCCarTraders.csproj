@@ -63,12 +63,6 @@
     <Compile Include="GUI\Controlers\CarCard.Designer.cs">
       <DependentUpon>CarCard.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Controlers\Card.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\Controlers\Card.Designer.cs">
-      <DependentUpon>Card.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\Controlers\CarPartCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -163,6 +157,12 @@
     <Compile Include="GUI\Admin\ManageUser.Designer.cs">
       <DependentUpon>ManageUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Controlers\NavBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Controlers\NavBar.Designer.cs">
+      <DependentUpon>NavBar.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Customer\CustomerDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,6 +201,7 @@
     </Compile>
     <Compile Include="Healper\DatabaseHelper.cs" />
     <Compile Include="Healper\PasswordHelper.cs" />
+    <Compile Include="Healper\SessionManager.cs" />
     <Compile Include="Healper\ValidationHelper.cs" />
     <Compile Include="GUI\LoginForm.cs">
       <SubType>Form</SubType>
@@ -210,11 +211,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\Admin\ManageOrders.resx">
+      <DependentUpon>ManageOrders.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Controlers\CarCard.resx">
       <DependentUpon>CarCard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Controlers\Card.resx">
-      <DependentUpon>Card.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Controlers\CarPartCard.resx">
       <DependentUpon>CarPartCard.cs</DependentUpon>
@@ -236,6 +237,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Admin\ManageCarParts.resx">
       <DependentUpon>ManageCarParts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Controlers\NavBar.resx">
+      <DependentUpon>NavBar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Customer\CustomerDashboard.resx">
       <DependentUpon>CustomerDashboard.cs</DependentUpon>
@@ -287,6 +291,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Car2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Red-Circle.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ABCCarTraders.Entity;
+using ABCCarTraders.Healper;
 
 namespace ABCCarTraders
 {
@@ -55,20 +56,10 @@ namespace ABCCarTraders
 
             if (user.Login(email, password, out string usertype))
             {
-                if (usertype.Equals("Customer", StringComparison.OrdinalIgnoreCase))
-                {
-                    // Redirect to Customer Dashboard
-                    CustomerDashboard customerDashboard = new CustomerDashboard();
-                    customerDashboard.Show();
-                    this.Hide();
-                }
-                else if (usertype.Equals("Admin", StringComparison.OrdinalIgnoreCase))
-                {
-                    // Redirect to Admin Dashboard
-                    AdminDashboard adminDashboard = new AdminDashboard();
-                    adminDashboard.Show();
-                    this.Hide();
-                }
+                SessionManager.PerformLogin(email, password); // Update session details
+                this.Hide();
+                HomePage homePage = HomePage.GetInstance();
+                homePage.Show();
             }
             else
             {

@@ -49,9 +49,12 @@ namespace ABCCarTraders.Database
             }
         }
 
-        // Get connection method
-        public SqlConnection GetConnection()
+        private static readonly string connectionString = ConfigurationManager.ConnectionStrings["CarDealershipDB"].ConnectionString;
+
+        // Get Connection Method
+        public static SqlConnection GetConnection()
         {
+            var conn = new SqlConnection(connectionString);
             return conn;
         }
     }

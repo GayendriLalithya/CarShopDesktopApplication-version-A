@@ -9,7 +9,7 @@ namespace ABCCarTraders.Entity
     public class Admin : User
     {
         // Attributes of the Admin class
-        public int adminid {  get; set; }
+        public int? adminid {  get; set; }
 
         // Default Constructor
         public Admin()

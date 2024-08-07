@@ -31,13 +31,16 @@
             this.flowPanelHome = new System.Windows.Forms.FlowLayoutPanel();
             this.cmbItemtype = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btnLogin = new Guna.UI2.WinForms.Guna2Button();
+            this.btnItemCount = new System.Windows.Forms.Label();
+            this.picBoxCart = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxCart)).BeginInit();
             this.SuspendLayout();
             // 
             // flowPanelHome
             // 
-            this.flowPanelHome.Location = new System.Drawing.Point(12, 122);
+            this.flowPanelHome.Location = new System.Drawing.Point(12, 91);
             this.flowPanelHome.Name = "flowPanelHome";
-            this.flowPanelHome.Size = new System.Drawing.Size(1112, 606);
+            this.flowPanelHome.Size = new System.Drawing.Size(1112, 637);
             this.flowPanelHome.TabIndex = 0;
             this.flowPanelHome.Paint += new System.Windows.Forms.PaintEventHandler(this.flwpnlCar_Paint);
             // 
@@ -51,7 +54,7 @@
             this.cmbItemtype.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmbItemtype.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cmbItemtype.ItemHeight = 30;
-            this.cmbItemtype.Location = new System.Drawing.Point(874, 80);
+            this.cmbItemtype.Location = new System.Drawing.Point(12, 24);
             this.cmbItemtype.Name = "cmbItemtype";
             this.cmbItemtype.Size = new System.Drawing.Size(250, 36);
             this.cmbItemtype.TabIndex = 1;
@@ -64,25 +67,49 @@
             this.btnLogin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(12, 55);
+            this.btnLogin.Location = new System.Drawing.Point(829, 24);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(180, 45);
             this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "Login";
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
+            // btnItemCount
+            // 
+            this.btnItemCount.AutoSize = true;
+            this.btnItemCount.BackColor = System.Drawing.Color.Transparent;
+            this.btnItemCount.Location = new System.Drawing.Point(1090, 18);
+            this.btnItemCount.Name = "btnItemCount";
+            this.btnItemCount.Size = new System.Drawing.Size(14, 16);
+            this.btnItemCount.TabIndex = 4;
+            this.btnItemCount.Text = "0";
+            // 
+            // picBoxCart
+            // 
+            this.picBoxCart.Image = global::ABCCarTraders.Properties.Resources.cart;
+            this.picBoxCart.Location = new System.Drawing.Point(1040, 22);
+            this.picBoxCart.Name = "picBoxCart";
+            this.picBoxCart.Size = new System.Drawing.Size(62, 50);
+            this.picBoxCart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBoxCart.TabIndex = 3;
+            this.picBoxCart.TabStop = false;
+            // 
             // HomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1136, 740);
+            this.Controls.Add(this.btnItemCount);
+            this.Controls.Add(this.picBoxCart);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.cmbItemtype);
             this.Controls.Add(this.flowPanelHome);
             this.Name = "HomePage";
             this.Text = "HomePage";
             this.Load += new System.EventHandler(this.HomePage_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxCart)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -91,5 +118,7 @@
         private System.Windows.Forms.FlowLayoutPanel flowPanelHome;
         private Guna.UI2.WinForms.Guna2ComboBox cmbItemtype;
         private Guna.UI2.WinForms.Guna2Button btnLogin;
+        private System.Windows.Forms.Label btnItemCount;
+        private System.Windows.Forms.PictureBox picBoxCart;
     }
 }

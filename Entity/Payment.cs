@@ -11,10 +11,10 @@ namespace ABCCarTraders.Entity
     internal class Payment
     {
         // Attributes of the Payment Class
-        public int paymentid {  get; set; }
-        public int invoiceid { get; set; }
+        public int? paymentid {  get; set; }
+        public int? invoiceid { get; set; }
         public DateTime date { get; set; }
-        public string status { get; set; } // "pending", "paid", "cancelled"
+        public string status { get; set; } = string.Empty; // "pending", "paid", "cancelled"
         public decimal amount { get; set; }
 
         // Default Constructor

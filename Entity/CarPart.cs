@@ -12,14 +12,14 @@ namespace ABCCarTraders.Entity
     public class CarPart
     {
         // Attributes of the CarPart class
-        public int carpartid {  get; set; }
-        public int itemid { get; set; }
-        public string carpartname { get; set; }
-        public int brandid { get; set; }
-        public string brandname { get; set; }
-        public string partnumber { get; set; }
+        public int? carpartid {  get; set; }
+        public int? itemid { get; set; }
+        public string carpartname { get; set; } = string.Empty;
+        public int? brandid { get; set; }
+        public string brandname { get; set; } = string.Empty;
+        public string partnumber { get; set; } = string.Empty;
         public decimal partprice { get; set; }
-        public string image {  get; set; }
+        public string image {  get; set; } = string.Empty;
 
         // Default Constructor
         public CarPart()

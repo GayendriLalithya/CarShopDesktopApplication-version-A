@@ -11,10 +11,10 @@ namespace ABCCarTraders.Entity
     internal class OrderDetails
     {
         // Attributes of the OrderDetails class
-        public int orderdetailsid { get; set; }
-        public int orderid { get; set; }
-        public int itemid { get; set; }
-        public int quantity { get; set; }
+        public int? orderdetailsid { get; set; }
+        public int? orderid { get; set; }
+        public int? itemid { get; set; }
+        public int? quantity { get; set; }
         public decimal totalprice { get; set; }
 
         // Default Constructor

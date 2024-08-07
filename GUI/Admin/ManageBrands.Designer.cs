@@ -33,14 +33,14 @@
             this.lblBrandImg = new System.Windows.Forms.Label();
             this.btnImgChoose = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
-            this.tbBrandName = new System.Windows.Forms.TextBox();
             this.btnInsertBrand = new System.Windows.Forms.Button();
             this.btnUpdateBrand = new System.Windows.Forms.Button();
             this.btnSearchBrand = new System.Windows.Forms.Button();
             this.btnDeleteBrand = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.tbBrandID = new System.Windows.Forms.TextBox();
             this.btnBack = new System.Windows.Forms.Button();
+            this.tbBrandName = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tbBrandID = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.picBrandImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,7 +64,7 @@
             // lblBrandImg
             // 
             this.lblBrandImg.AutoSize = true;
-            this.lblBrandImg.Location = new System.Drawing.Point(56, 118);
+            this.lblBrandImg.Location = new System.Drawing.Point(56, 122);
             this.lblBrandImg.Name = "lblBrandImg";
             this.lblBrandImg.Size = new System.Drawing.Size(84, 16);
             this.lblBrandImg.TabIndex = 2;
@@ -89,13 +89,6 @@
             this.btnRemove.Text = "Remove";
             this.btnRemove.UseVisualStyleBackColor = true;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
-            // 
-            // tbBrandName
-            // 
-            this.tbBrandName.Location = new System.Drawing.Point(165, 69);
-            this.tbBrandName.Name = "tbBrandName";
-            this.tbBrandName.Size = new System.Drawing.Size(229, 22);
-            this.tbBrandName.TabIndex = 5;
             // 
             // btnInsertBrand
             // 
@@ -146,13 +139,6 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "Brand Id";
             // 
-            // tbBrandID
-            // 
-            this.tbBrandID.Location = new System.Drawing.Point(529, 65);
-            this.tbBrandID.Name = "tbBrandID";
-            this.tbBrandID.Size = new System.Drawing.Size(219, 22);
-            this.tbBrandID.TabIndex = 11;
-            // 
             // btnBack
             // 
             this.btnBack.Location = new System.Drawing.Point(581, 388);
@@ -163,19 +149,57 @@
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // tbBrandName
+            // 
+            this.tbBrandName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbBrandName.DefaultText = "";
+            this.tbBrandName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbBrandName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbBrandName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbBrandName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbBrandName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbBrandName.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tbBrandName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbBrandName.Location = new System.Drawing.Point(165, 59);
+            this.tbBrandName.Name = "tbBrandName";
+            this.tbBrandName.PasswordChar = '\0';
+            this.tbBrandName.PlaceholderText = "";
+            this.tbBrandName.SelectedText = "";
+            this.tbBrandName.Size = new System.Drawing.Size(229, 36);
+            this.tbBrandName.TabIndex = 13;
+            // 
+            // tbBrandID
+            // 
+            this.tbBrandID.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbBrandID.DefaultText = "";
+            this.tbBrandID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbBrandID.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbBrandID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbBrandID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbBrandID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbBrandID.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tbBrandID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbBrandID.Location = new System.Drawing.Point(529, 58);
+            this.tbBrandID.Name = "tbBrandID";
+            this.tbBrandID.PasswordChar = '\0';
+            this.tbBrandID.PlaceholderText = "";
+            this.tbBrandID.SelectedText = "";
+            this.tbBrandID.Size = new System.Drawing.Size(219, 36);
+            this.tbBrandID.TabIndex = 14;
+            // 
             // ManageBrands
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.tbBrandID);
+            this.Controls.Add(this.tbBrandName);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnDeleteBrand);
             this.Controls.Add(this.btnSearchBrand);
             this.Controls.Add(this.btnUpdateBrand);
             this.Controls.Add(this.btnInsertBrand);
-            this.Controls.Add(this.tbBrandName);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnImgChoose);
             this.Controls.Add(this.lblBrandImg);
@@ -196,13 +220,13 @@
         private System.Windows.Forms.Label lblBrandImg;
         private System.Windows.Forms.Button btnImgChoose;
         private System.Windows.Forms.Button btnRemove;
-        private System.Windows.Forms.TextBox tbBrandName;
         private System.Windows.Forms.Button btnInsertBrand;
         private System.Windows.Forms.Button btnUpdateBrand;
         private System.Windows.Forms.Button btnSearchBrand;
         private System.Windows.Forms.Button btnDeleteBrand;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox tbBrandID;
         private System.Windows.Forms.Button btnBack;
+        private Guna.UI2.WinForms.Guna2TextBox tbBrandName;
+        private Guna.UI2.WinForms.Guna2TextBox tbBrandID;
     }
 }

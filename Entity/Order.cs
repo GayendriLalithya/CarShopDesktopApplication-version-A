@@ -11,10 +11,10 @@ namespace ABCCarTraders.Entity
     public class Order
     {
         // Attributes of the Order Class
-        public int orderid {  get; set; }
-        public int customerid { get; set; }
+        public int? orderid {  get; set; }
+        public int? customerid { get; set; }
         public DateTime orderdate { get; set; }
-        public string status { get; set; }
+        public string status { get; set; } = string.Empty;
 
         // Default Constructor
         public Order()

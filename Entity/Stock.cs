@@ -11,10 +11,10 @@ namespace ABCCarTraders.Entity
     internal class Stock
     {
         // Attributes of the Stock Class
-        public int stockid {  get; set; }
-        public int itemid { get; set; }
+        public int? stockid {  get; set; }
+        public int? itemid { get; set; }
         public DateTime date { get; set; }
-        public int quantity { get; set; }
+        public int? quantity { get; set; }
 
         // Default Constructor
         public Stock()

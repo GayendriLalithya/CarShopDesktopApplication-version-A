@@ -11,9 +11,9 @@ namespace ABCCarTraders.Entity
     internal class Invoice
     {
         // Attributes of the invoice Class
-        public int invoiceid {  get; set; }
-        public int orderid { get; set; }
-        public int serviceid { get; set; }
+        public int? invoiceid {  get; set; }
+        public int? orderid { get; set; }
+        public int? serviceid { get; set; }
         public decimal totalamount { get; set; }
 
         // Default Constructor

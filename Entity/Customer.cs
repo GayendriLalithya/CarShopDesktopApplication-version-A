@@ -9,7 +9,7 @@ namespace ABCCarTraders.Entity
     internal class Customer : User
     {
         // Attributes of the Customer Class
-        public int customerid {  get; set; }
+        public int? customerid {  get; set; }
 
         // Default Constructor
         public Customer()

@@ -11,12 +11,12 @@ namespace ABCCarTraders.Entity
     internal class Service
     {
         // Attributes of the Service Class
-        public int serviceid {  get; set; }
-        public string servicedescription { get; set; }
+        public int? serviceid {  get; set; }
+        public string servicedescription { get; set; } = string.Empty;
         public DateTime date { get; set; }
-        public int carid { get; set; }
-        public int customerid { get; set; }
-        public string vinnumber { get; set; }
+        public int? carid { get; set; }
+        public int? customerid { get; set; }
+        public string vinnumber { get; set; } = string.Empty;
         public decimal price { get; set; }
 
         // Default Constructor

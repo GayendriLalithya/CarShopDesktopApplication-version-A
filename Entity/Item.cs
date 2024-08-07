@@ -9,8 +9,8 @@ namespace ABCCarTraders.Entity
     public class Item
     {
         // Attributes of the Item class
-        public int itemid {  get; set; }
-        public string itemtype { get; set; }
+        public int? itemid {  get; set; }
+        public string itemtype { get; set; } = string.Empty;
 
         // default Constructor
         public Item()

@@ -12,14 +12,14 @@ namespace ABCCarTraders.Entity
     public class User
     {
         // Attributes of the user class
-        public int userid {  get; set; }
-        public string usertype { get; set; }
-        public string firstname { get; set; }
-        public string lastname { get; set; }
-        public string address { get; set; }
-        public string contactno { get; set; }
-        public string email { get; set; }
-        public string password { get; set; }
+        public int? userid {  get; set; }
+        public string usertype { get; set; } = string.Empty;
+        public string firstname { get; set; } = string.Empty;
+        public string lastname { get; set; } = string.Empty;
+        public string address { get; set; } = string.Empty;
+        public string contactno { get; set; } = string.Empty;
+        public string email { get; set; } = string.Empty;
+        public string password { get; set; } = string.Empty;
 
         // Database Connection 
         private readonly string connectionString;

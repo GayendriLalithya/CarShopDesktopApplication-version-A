@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
+using ABCCarTraders.Database;
 
 namespace ABCCarTraders.GUI
 {
@@ -121,7 +122,7 @@ namespace ABCCarTraders.GUI
             };
 
             // Call the register method in the user class
-            try 
+            try
             {
                 reg.Register();
                 MessageBox.Show("User registered successfully!");

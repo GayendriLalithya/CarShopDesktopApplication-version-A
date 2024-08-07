@@ -11,11 +11,11 @@ namespace ABCCarTraders.Entity
     public class Report
     {
         // Attributes of the Report class
-        public int reportid {  get; set; }
-        public int adminid { get; set; }
-        public string reporttype { get; set; }
+        public int? reportid {  get; set; }
+        public int? adminid { get; set; }
+        public string reporttype { get; set; } = string.Empty;
         public DateTime createdate { get; set; }
-        public string report {  get; set; }
+        public string report {  get; set; } = string.Empty;
 
         // Default Constructor
         public Report()

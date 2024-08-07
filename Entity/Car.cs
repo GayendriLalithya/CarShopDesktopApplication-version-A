@@ -14,14 +14,14 @@ namespace ABCCarTraders.Entity
     internal class Car
     {
         // Attributes of the Car Class
-        public int carid {  get; set; }
+        public int? carid {  get; set; }
         public int? itemid { get; set; }
-        public int brandid { get; set; }
-        public string brand { get; set; }
-        public string model { get; set; }
-        public int year { get; set; }
+        public int? brandid { get; set; }
+        public string brand { get; set; } = string.Empty;
+        public string model { get; set; } = string.Empty;
+        public int? year { get; set; }
         public decimal price { get; set; }
-        public string image { get; set; }
+        public string image { get; set; } = string.Empty;
 
         // Default Constructor
         public Car()

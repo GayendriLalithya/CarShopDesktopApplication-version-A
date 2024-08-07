@@ -11,10 +11,10 @@ namespace ABCCarTraders.Entity
     internal class Cart
     {
         // Attributes of the Cart class
-        public int cartid { get; set; }
-        public int customerid { get; set; }
-        public int itemid { get; set; }
-        public int quantity { get; set; }
+        public int? cartid { get; set; }
+        public int? customerid { get; set; }
+        public int? itemid { get; set; }
+        public int? quantity { get; set; }
 
         // Default Constructor
         public Cart()

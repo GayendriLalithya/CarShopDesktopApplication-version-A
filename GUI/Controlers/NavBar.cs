@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ABCCarTraders.Controlers
+namespace ABCCarTraders.GUI.Controlers
 {
-    public partial class Card : UserControl
+    public partial class NavBar : UserControl
     {
-        public Card()
+        public NavBar()
         {
             InitializeComponent();
-        }
-
-        private void Card_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

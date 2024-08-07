@@ -1,5 +1,7 @@
 ﻿using ABCCarTraders.Entity;
+using ABCCarTraders.GUI.Admin;
 using ABCCarTraders.GUI.Controlers;
+using ABCCarTraders.GUI.Customer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,15 +11,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ABCCarTraders.Healper;
 
 namespace ABCCarTraders.GUI
 {
     public partial class HomePage : Form
     {
+        private static HomePage instance;
+        public static HomePage GetInstance()
+        {
+            if (instance == null || instance.IsDisposed)
+            {
+                instance = new HomePage();
+            }
+            return instance;
+        }
+
         public HomePage()
         {
             InitializeComponent();
-            cmbItemtype.SelectedItem = "Car"; // Set "Car" as the default by name
+            //cmbItemtype.SelectedItem = "Car"; // Set "Car" as the default by name
 
             // Attach event handler
             cmbItemtype.SelectedIndexChanged += cmbItemtype_SelectedIndexChanged;
@@ -26,6 +39,11 @@ namespace ABCCarTraders.GUI
             cmbItemtype.Items.Add("Car");
             cmbItemtype.Items.Add("Car Part");
             cmbItemtype.SelectedIndex = 0;  // Default to showing cars, triggers event if event handler is attached before
+
+            if (SessionManager.IsLoggedIn)
+            {
+                btnLogin.Text = "Dashboard";  // Update text based on the session
+            }
         }
 
         private void LoadCarCards()
@@ -91,9 +109,29 @@ namespace ABCCarTraders.GUI
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            LoginForm loginForm = new LoginForm();
-            loginForm.ShowDialog();
-            this.Hide();
+            if (btnLogin.Text == "Login")
+            {
+                LoginForm loginForm = new LoginForm();  // Your login form
+                if (loginForm.ShowDialog() == DialogResult.OK)
+                {
+                    btnLogin.Text = "Dashboard";  // Change button text to Dashboard
+                }
+            }
+            else if (btnLogin.Text == "Dashboard")
+            {
+                if (SessionManager.UserRole == "Admin")
+                {
+                    AdminDashboard adminDashboard = new AdminDashboard();  // Your Admin Dashboard Form
+                    adminDashboard.Show();
+                    this.Hide();
+                }
+                else if (SessionManager.UserRole == "Customer")
+                {
+                    CustomerDashboard customerDashboard = new CustomerDashboard();  // Your Customer Dashboard Form
+                    customerDashboard.Show();
+                    this.Hide();
+                }
+            }
         }
     }
 }

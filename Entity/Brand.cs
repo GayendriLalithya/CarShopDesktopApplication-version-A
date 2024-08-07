@@ -12,8 +12,8 @@ namespace ABCCarTraders.Entity
     {
         // Attributes of the Brand class
         public int? brandid { get; set; }
-        public string brandname { get; set; }
-        public string image {  get; set; }
+        public string brandname { get; set; } = string.Empty;
+        public string image {  get; set; } = string.Empty;
 
         // Database Connection
         //private readonly string connectionString;
